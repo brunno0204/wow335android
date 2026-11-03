@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Restore source archive
         run: git show 8b28edae3b46547fd184f8eb5483e2a086998d96:wow335android-v0.83-github.zip > wow335android-v0.83-github.zip
       - name: Verify and extract source archive
