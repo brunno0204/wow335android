@@ -1,0 +1,10 @@
+file(GLOB_RECURSE PRIVATE_SOURCES CONFIGURE_DEPENDS "*.cpp")
+
+add_library(WowServices STATIC
+    ${PRIVATE_SOURCES}
+)
+
+target_include_directories(WowServices
+    PUBLIC
+        ${CMAKE_SOURCE_DIR}
+)

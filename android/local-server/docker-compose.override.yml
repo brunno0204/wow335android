@@ -1,0 +1,8 @@
+# Copie para a pasta azerothcore-wotlk (ao lado do docker-compose.yml oficial).
+# Servidor de desenvolvimento do port Android. Nome AC_*: prefixo AC_, "." -> "_",
+# "_" entre minúscula+maiúscula, tudo em maiúsculas (guia oficial do AzerothCore).
+services:
+  ac-worldserver:
+    environment:
+      AC_WARDEN_ENABLED: "0"                   # Warden.Enabled — o port não executa o anti-cheat
+      AC_SOCKET_TIME_OUT_TIME_ACTIVE: "120000" # SocketTimeOutTimeActive: tolera pausas no celular

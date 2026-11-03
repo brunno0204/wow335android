@@ -1,0 +1,26 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'org.wowdecomp.android'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    ndkVersion '27.2.12479018'
+    defaultConfig {
+        applicationId 'org.wowdecomp.android'
+        minSdk 26
+        targetSdk 35
+        versionCode 83
+        versionName '0.83-retrato-desempenho'
+        ndk { abiFilters 'arm64-v8a' }
+        externalNativeBuild {
+            cmake { arguments '-DANDROID_STL=c++_static'; targets 'wow_android' }
+        }
+    }
+    externalNativeBuild {
+        cmake { path '../../CMakeLists.txt'; version '3.22.1' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
